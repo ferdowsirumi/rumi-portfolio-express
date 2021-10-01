@@ -1,6 +1,6 @@
 {
-  "name": "comp229-f2020-week3",
-  "version": "0.0.1",
+  "name": "ferdowsirumi",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "nodemon ./server.js"
@@ -34,5 +34,12 @@
   "bugs": {
     "url": "https://github.com/tsiliopoulos/COMP229-F2020-Week3/issues"
   },
-  "homepage": "https://github.com/tsiliopoulos/COMP229-F2020-Week3#readme"
+  "homepage": "https://github.com/tsiliopoulos/COMP229-F2020-Week3#readme",
+  "keywords": [
+    "Profile",
+    "with",
+    "node",
+    "nodejs",
+    "rumi-express"
+  ]
 }
