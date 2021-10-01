@@ -1,3 +1,8 @@
+//Student Name: Ferdowsi Rumi
+//Student Number: 301168815
+//Date: OCT 1st, 2021
+
+
 
 function myfunction() {
   var x = document.getElementById("menubar");
