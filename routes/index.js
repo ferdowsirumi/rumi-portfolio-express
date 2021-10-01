@@ -10,7 +10,9 @@ router.get('/', function(req, res, next) {
 router.get('/home', function(req, res, next) {
   res.render('index', { title: 'Home'});
 });
-
+router.get('/index', function(req, res, next) {
+  res.render('index', { title: 'Home'});
+});
 /* GET About Us page. */
 router.get('/about', function(req, res, next) {
   res.render('aboutme', { title: 'About Me'});
@@ -22,7 +24,7 @@ router.get('/projects', function(req, res, next) {
 });
 
 /* GET Services page. */
-router.get('/services', function(req, res, next) {
+router.get('/service', function(req, res, next) {
   res.render('service', { title: 'Services'});
 });
 
@@ -31,4 +33,12 @@ router.get('/contact', function(req, res, next) {
   res.render('contact', { title: 'Contact'});
 });
 
+router.get('/cv', (req, res) => {
+  res.download('Ferdowsi_Rumi_CV.pdf');
+ // res.sendFile(path.join(__dirname,'./static/Ferdowsi_Rumi_CV.pdf'));
+});
+/* GET Contact Us page. */
+router.get('/p/*', function(req, res, next) {
+  res.render('contact', { title: 'Contact'});
+});
 module.exports = router;

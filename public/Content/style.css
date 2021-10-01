@@ -866,7 +866,7 @@ body {
 
 .header-contact {
     position: relative;
-    background-image: url(../image/img33.jpg);
+    background-image: url(/Assets/images/img33.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     height: 400px;
@@ -962,7 +962,7 @@ body {
     /* border: 1px solid navy; */
     margin: auto;
     /* margin-top: 10px; */
-    background-image: url(../image/background_profile.jpg);
+    background-image: url(/Assets/images/background_profile.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
