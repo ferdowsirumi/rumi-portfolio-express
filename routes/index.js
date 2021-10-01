@@ -33,9 +33,8 @@ router.get('/contact', function(req, res, next) {
   res.render('contact', { title: 'Contact'});
 });
 
-router.get('/cv', (req, res) => {
-  res.download('Ferdowsi_Rumi_CV.pdf');
- // res.sendFile(path.join(__dirname,'./static/Ferdowsi_Rumi_CV.pdf'));
+router.get('/cv', (req, res, next) => {
+  res.download('./public/Ferdowsi_Rumi_CV.pdf');
 });
 /* GET Contact Us page. */
 router.get('/p/*', function(req, res, next) {
