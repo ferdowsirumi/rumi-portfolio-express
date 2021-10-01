@@ -38,6 +38,7 @@ router.get('/cv', (req, res, next) => {
 });
 /* GET Contact Us page. */
 router.get('/p/*', function(req, res, next) {
-  res.render('contact', { title: 'Contact'});
+  res.sendFile();
+ // res.render('', { title: 'Contact'});
 });
 module.exports = router;

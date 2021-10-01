@@ -1,0 +1,25 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
+body{
+    padding-top: 56px;
+    font-family: 'Muli', sans-serif;
+
+}
+.jumbotron {
+    background: url(../images/hero_iamge1.jpg) no-repeat center center;
+    background-size:cover;
+}
+.btn-primary {
+    background-color: #c60063;
+    border-color: #c60063;
+}
+.btn-secondary {
+    background-color: transparent;
+    border-color: #c60063;
+    color: #c60063;
+}
+#contact {
+    background: url(../images/hero_1.jpg) no-repeat center;
+    background-size:cover;
+}

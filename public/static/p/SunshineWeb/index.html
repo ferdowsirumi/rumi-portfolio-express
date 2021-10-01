@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Arimo|Archivo Narrow|'Hind', sans-serif " rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- <....Header....> -->
+    <div class="stricky">
+        <div class="row">
+            <div class="logo">
+                <img src="images/logo.png" style="width:200px;">
+            </div>
+            <div class="navbar">
+                <a href="#">HOME</a>
+                <a href="#">ABOUT US</a>
+                <a href="#">SERVICES</a>
+                <div class="dropdown">
+                    <button class="dropbtn">SECTIONS
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#blog-post">Latest Posts</a>
+                        <a href="#">Our Team</a>
+                        <a href="#">Testimonial</a>
+                        <a href="#our-client">Our Clients</a>
+                    </div>
+                </div>
+                <a href="#">GALLERY</a>
+                <div class="dropdown">
+                    <button class="dropbtn">BLOG
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">Left Blog</a>
+                        <a href="#">Right Blog</a>
+                        <a href="#">Blog Post 2 Col</a>
+                        <a href="#">Blog Post 1 Col</a>
+                    </div>
+                </div>
+                <a href="#">CONTACT US</a>
+            </div>
+        </div>
+        <!-- <hamburger> -->
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fas fa-bars"></i>
+        </a>
+        <div id="myLinks">
+            <a href="#news">HOME</a>
+            <a href="#contact">ABOUT US</a>
+            <a href="#about">SERVICE</a>
+            <a href="#news">SECTION</a>
+            <a href="#contact">GALLERY</a>
+            <a href="#about">BLOG</a>
+        </div>
+
+    </div>
+    <!-- <slideshow-container> -->
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <div class="number-text">1 / 3</div>
+                <img src="images/nature-wide.jpg" style="width:100%;height:600px;">
+                <div class="text">
+                    <div class="text-header">A Professional Project Agency</div>
+                    <div style="font-size:19px;margin-top:15px;">We are project agency that loves crafting beautiful projects with great functionality</div>
+                    <div>
+                        <div class="text-button">LEARN MORE</div>
+                        <div class="text-button right">BUY THEME</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="number-text">2 / 3</div>
+                <img src="images/road-wide.jpg" style="width:100%;height:600px;">
+                <div class="text">
+                    <div class="text-header">Trust To Our Experience</div>
+                    <div style="font-size:19px;margin-top:15px;">We are working for your Project Shine</div>
+                    <div>
+                        <div class="text-button">LEARN MORE</div>
+                        <div class="text-button right">BUY THEME</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="number-text">3 / 3</div>
+                <img src="images/snow-wide.jpg" style="width:100%;height:600px;">
+                <div class="text">
+                    <div class="text-header text-font">WE ARE WORKING FOR YOUR PROJECT</div>
+                    <div style="font-size:19px;margin-top:15px;">We are project agency that loves crafting beautiful projects with great functionality</div>
+                    <div>
+                        <div class="text-button">LEARN MORE</div>
+                        <div class="text-button right">BUY THEME</div>
+                    </div>
+                </div>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next rigght" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    <!-- <ROW-COLUMN> -->
+    <div class="default-row">
+        <div class="inner-row">
+            <h1>ABOUT PROJECT SHINE</h1>
+            <p style="padding-bottom:30px;">Nulla fringilla diam eget eros pretium, pharetra placerat elit commodo. Etiam ultrices imperdiet est, vitae consequat
+                nulla porta sed. Aliquam dignissim est nunc, non finibus risus facilisis ut. Curabitur id risus dolor. Aliquam
+                sed malesuada tortor. Mauris a gravida nulla. Nam egestas, quam quis finibus porta, nulla justo hendrerit
+                lectus, vitae condimentum lectus tortor vel ipsum. Ut molestie tincidunt elementum.
+            </p>
+        </div>
+    </div>
+    <div class="table-row">
+        <div class="row-column">
+            <div class="image-box">
+                <div class="center-box">
+                    <div class="center-text">
+                        <div class="center-header">NEW PROJECT</div>
+                        <p>Aenean accumsan felis non nisi cursus maximus. Nunc dapibus pulvinar auctor. Integer purus quam,
+                            blandit ut porta porta, semper id nisi.</p>
+                        <div class="text-button">LEARN MORE</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <Second-Column> -->
+        <div class="row-column row-padding">
+            <h1>WHAT WE ARE DOING</h1>
+            <div class="icon-container" id="first">
+                <i class="far fa-gem"></i>
+                <p>Design Architecture</p>
+            </div>
+            <div class="icon-container">
+                <i class="fab fa-linode"></i>
+                <p>Architecture Sketch</p>
+            </div>
+            <div class="icon-container">
+                <i class="far fa-file"></i>
+                <p>Grid Architecture</p>
+            </div>
+            <div class="icon-container">
+                <i class="fas fa-arrows-alt"></i>
+                <p>Technical Drowing</p>
+            </div>
+            <div class="icon-container">
+                <i class="far fa-building"></i>
+                <p>Building Contractor</p>
+            </div>
+            <div class="icon-container">
+                <i class="fab fa-wikipedia-w"></i>
+                <p>Web Architecture</p>
+            </div>
+        </div>
+    </div>
+    <!-- <Third-Column> -->
+    <div class="default-row">
+        <div class="inner-row">
+            <h1>OUR SERVICE</h1>
+            <p style="padding-bottom:30px;">Nullam nisl massa, scelerisque ac enim sit amet, interdum tincidunt quam.
+            </p>
+        </div>
+    </div>
+    <!-- <Forth-Column> -->
+    <div class="table-row">
+        <div class="row-column">
+            <div class="design-row">
+                <div class="design-col">
+                    <h2>Interior Design</h2>
+                    <p>Proin condimentum, arcu ultricies consequat mollis, sem ipsum volutpat purus, quis vestibulum felis purus
+                        at nibh. Phasellus vel ipsum tortor.</p>
+                </div>
+                <div class="design-col">
+                    <h2>Exterior Design</h2>
+                    <P>Proin condimentum, arcu ultricies consequat mollis, sem ipsum volutpat purus, quis vestibulum felis purus
+                        at nibh. Phasellus vel ipsum tortor.</P>
+                </div>
+            </div>
+            <div class="design-row">
+                <div class="design-col">
+                    <h2>Interior Design</h2>
+                    <p>Proin condimentum, arcu ultricies consequat mollis, sem ipsum volutpat purus, quis vestibulum felis purus
+                        at nibh. Phasellus vel ipsum tortor.</p>
+                </div>
+                <div class="design-col">
+                    <h2>Exterior Design</h2>
+                    <P>Proin condimentum, arcu ultricies consequat mollis, sem ipsum volutpat purus, quis vestibulum felis purus
+                        at nibh. Phasellus vel ipsum tortor.</P>
+                </div>
+            </div>
+        </div>
+        <div class="row-column">
+            <img src="images/img1.jpg" style="width:100%;height:auto;">
+        </div>
+    </div>
+    <!-- <Fifth-Column> -->
+    <div class="default-row" id="blog-post">
+        <div class="inner-row">
+            <h1>LATEST BLOG POSTS</h1>
+            <p style="padding-bottom:30px;">Etiam ultrices imperdiet est, vitae consequat nulla porta sed.
+                <span style="color:#D33B57"> All Blog Posts -></span>
+            </p>
+        </div>
+    </div>
+    <!-- <Sixth-Column> -->
+    <div class="loreum-container">
+        <div class="loreum-row">
+            <div class="loreum-column">
+                <img src="images/house1.jpg" style="width:100%;height:258px;">
+            </div>
+            <div class="loreum-column loreum-padding">
+                <div class="arrow"></div>
+                <h2>Lorem Ipsum</h2>
+                <p> Proin condimentum, arcu ultricies consequat mollis, sem ipsum volutpat purus, quis vestibulum felis purus
+                    at nibh.</p>
+                <span style="color:#D33B57">Learn More..</span>
+            </div>
+            <div class="loreum-column">
+                <img src="images/house2.jpg" style="width:100%;height:258px;">
+            </div>
+            <div class="loreum-column loreum-padding">
+                <div class="arrow"></div>
+                <h2>Lorem Ipsum</h2>
+                <p> Proin condimentum, arcu ultricies consequat mollis, sem ipsum volutpat purus, quis vestibulum felis purus
+                    at nibh.</p>
+                <span style="color:#D33B57">Learn More..</span>
+            </div>
+        </div>
+        <div class="loreum-row">
+            <div class="loreum-column loreum-padding">
+                <div class="arrow-right"></div>
+                <h2>Lorem Ipsum</h2>
+                <p> Proin condimentum, arcu ultricies consequat mollis, sem ipsum volutpat purus, quis vestibulum felis purus
+                    at nibh.</p>
+                <span style="color:#D33B57">Learn More..</span>
+            </div>
+            <div class="loreum-column">
+                <img src="images/house3.jpg" style="width:100%;height:258px;">
+            </div>
+            <div class="loreum-column loreum-padding">
+                <div class="arrow-right"></div>
+                <h2>Lorem Ipsum</h2>
+                <p> Proin condimentum, arcu ultricies consequat mollis, sem ipsum volutpat purus, quis vestibulum felis purus
+                    at nibh.</p>
+                <span style="color:#D33B57">Learn More..</span>
+            </div>
+            <div class="loreum-column">
+                <img src="images/house5.jpg" style="width:100%;height:258px;">
+            </div>
+        </div>
+    </div>
+    <!-- <picture-column> -->
+    <div class="default-row" id="our-client">
+        <div class="inner-row">
+            <h1>OUR CLIENTS</h1>
+            <p style="padding-bottom:30px;">Maecenas et enim blandit, vehicula ligula at, molestie lacus. Etiam interdum mattis tellus, eu porta sem vulputate
+                sit amet. .
+            </p>
+        </div>
+    </div>
+    <!-- <Second-slideshow> -->
+    <div class="design-container">
+        <div class="design-roww">
+            <div class="design-cll">
+                <div class="author">
+                    <p class="author-color">ART</p>
+                    <P>DESIGN</P>
+                </div>
+            </div>
+            <div class="design-cll">
+                <div class="author">
+                    <p class="author-color">MOMA</p>
+                    <P>ART</P>
+                </div>
+            </div>
+            <div class="design-cll">
+                <div class="author">
+                    <p class="author-color">EDGE</p>
+                    <P>PROJECT</P>
+                </div>
+            </div>
+            <div class="design-cll">
+                <div class="author">
+                    <p class="author-color">PROJECT</p>
+                    <P>DESIGN</P>
+                </div>
+            </div>
+            <div class="design-cll">
+                <div class="author">
+                    <p class="author-color">MODERN</p>
+                    <P>DESIGN</P>
+                </div>
+            </div>
+            <div class="design-cll">
+                <div class="author">
+                    <p class="author-color">LONDON</p>
+                    <P>FASHION</P>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <footer> -->
+    <button onclick="topFunction()" id="myBtn">Scroll Top</button>
+    <div class="loreum-container ">
+        <div class="loreum-row footer-row">
+            <div class="loreum-column loreum-padding">
+                <h2 class="footer-title">PROJECT SHINE</h2>
+                <div class="footer-para">
+                    <p class="footer-text">Nulla fringilla diam eget eros pretium, pharetra placerat elit commodo. Etiam ultrices imperdiet est.
+                    </p>
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-google-plus-g"></i>
+                    <i class="fas fa-camera"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+            </div>
+            <div class="loreum-column loreum-padding">
+                <h2>FOOTER MENU</h2>
+                <div class="footer-para">
+                    <p> About Us</p>
+                    <p> Our Team</p>
+                    <p> Service</p>
+                    <p> Our CLients</p>
+                    <p> Blog</p>
+                    <p> Gallery</p>
+                </div>
+            </div>
+            <div class="loreum-column loreum-padding">
+                <h2>COMPANY ADDRESS</h2>
+                <div class="footer-para">
+                    <P>Broadway Str. Alaska, USA</P>
+                    <p>
+                        <i class="fas fa-phone"></i> +1 (917) 000 1138</p>
+                    <p>
+                        <i class="far fa-envelope"></i> hazerarumi@gmail.com</p>
+                    <p>
+                        <i class="fas fa-fax"></i> +1 (917) 000 1138</p>
+                </div>
+            </div>
+            <div class="loreum-column loreum-padding">
+                <h2 class="footer-title">OUR SERVICE</h2>
+                <div class="footer-para footer-text1">
+                    <P>Interior Design</P>
+                    <P>Exterior Design</P>
+                    <p>Landscape Design</p>
+                    <p> Industrial Design </p>
+                    <p> Wordpress Design Web Design</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

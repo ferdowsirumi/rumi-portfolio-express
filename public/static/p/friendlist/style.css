@@ -1,0 +1,45 @@
+body {
+  margin: 0px;
+  background: #5AC8AD;
+  height: 900px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 80px;
+}
+
+.col2 {
+  line-height: 10px;
+  border: 1px solid white;
+  background: white;
+  margin: 10px 10px;
+  border-radius: 4px;
+  padding: 20px 20px;
+}
+
+.fourCol {
+  flex: 17%;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+  display: inline-block;
+}
+
+.fourCol p {
+  color: gray;
+  font-size: 18px;
+  font-style:italic;
+}
+.fourCol h1{
+font-size:25px;
+color:#15A3AE;
+}
+
+@media only screen and (max-width:1024px) {
+  .row {
+    width: 100%;
+  }
+  .fourCol {
+    flex: 100%;
+  }
+}
