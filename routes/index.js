@@ -21,6 +21,10 @@ router.get('/index', function(req, res, next) {
 router.get('/about', function(req, res, next) {
   res.render('aboutme', { title: 'About Me'});
 });
+/* GET Form page. */
+router.get('/login', function(req, res, next) {
+  res.render('login', { title: 'Login'});
+});
 
 /* GET Products page. */
 router.get('/projects', function(req, res, next) {
