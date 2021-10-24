@@ -7,11 +7,7 @@
  * Module dependencies.
  */
 
-// var app = require('./app');
-// var debug = require('debug')('week-4:server');
-// var http = require('http');
-
-import app from './app';
+import app from './server/config/app';
 import http from 'http';
 import debug from 'debug';
 
