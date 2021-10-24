@@ -16,11 +16,41 @@ import session from "express-session";
 import flash from 'connect-flash';
 import { NextFunction } from 'express';
 
+//db
+import * as DBConfig from './db';
+import { isLoggedIn } from "../middlewares/auth";
+
+
+
+const StoreOptions = {
+  store: MongoStore.create({
+    mongoUrl: (DBConfig.RemoteURI) ? DBConfig.RemoteURI : DBConfig.LocalURI
+  }),
+  secret: DBConfig.Secret,
+  saveUninitialized: false,
+  resave: false,
+  cookie: {
+    maxAge: 600000
+  }
+}
 
 import indexRouter from '../routes/index';
-
 import userRouter from '../routes/users';
-let app = express();
+import contactRouter from '../routes/contact';
+
+//db config connection
+
+//DB Configuration
+console.log("remoete uri", DBConfig.RemoteURI);
+mongoose.connect((DBConfig.RemoteURI) ? DBConfig.RemoteURI : DBConfig.LocalURI);
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error'));
+db.once('open', function () {
+  console.log('connected to MongoDB at:' + DBConfig.HostName);
+});
+// application config
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, '../views'));
@@ -34,8 +64,20 @@ app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../public/static')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
+
+//  connect-flash initialization
+app.use(flash());
+
+//express session initialization
+app.use(session(StoreOptions));
+
+//passport initialization
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use('/', indexRouter);
 app.use('/auth', userRouter);
+app.use('/contact', isLoggedIn, contactRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

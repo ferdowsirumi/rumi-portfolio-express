@@ -2,12 +2,17 @@
 //Student Name: Ferdowsi Rumi
 //Student Number: 301168815
 //Date: OCT 1st, 2021
-import express,{Router} from 'express'
+import { Router } from "express";
+import { DisplayLoginPage, DisplayRegisterPage, ProcessLoginPage, ProcessLogout, ProcessRegisterPage } from "../controllers/user";
+
+import passport from '../middlewares/auth';
+
 const router = Router();
 
-/* GET users listing. */
-router.get('/', function(req:express.Request, res:express.Response, next:express.NextFunction) {
-  res.send('Placeholder');
-});
+router.get('/login', DisplayLoginPage);
+router.post('/login', passport.authenticate('login'), ProcessLoginPage);
+router.get('/register', DisplayRegisterPage);
+router.post('/register', ProcessRegisterPage);
+router.get('/logout', ProcessLogout);
 
 export default router;

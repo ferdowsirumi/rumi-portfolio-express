@@ -11,7 +11,7 @@ import app from './server/config/app';
 import http from 'http';
 import debug from 'debug';
 
-import createError from 'http-errors';
+import httpErrors from 'http-errors';
 /**
  * Get port from environment and store in Express.
  */
@@ -58,7 +58,7 @@ function normalizePort(val: string): string | number | boolean {
  * Event listener for HTTP server "error" event.
  */
 
-function onError(error: createError.HttpError) {
+function onError(error: httpErrors.HttpError) {
   if (error.syscall !== 'listen') {
     throw error;
   }
