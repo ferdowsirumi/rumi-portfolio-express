@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.isLoggedIn = void 0;
 const passport_1 = __importDefault(require("passport"));
 const passport_local_1 = __importDefault(require("passport-local"));
-const user_1 = __importDefault(require("../models/user"));
+const User_1 = __importDefault(require("../models/User"));
 const LocalStrategy = passport_local_1.default.Strategy;
 const strategyOptions = {
     usernameField: "username",
@@ -24,7 +24,7 @@ const strategyOptions = {
 };
 const loginFunction = (req, username, password, done) => __awaiter(void 0, void 0, void 0, function* () {
     debugger;
-    const user = yield user_1.default.findOne({ username });
+    const user = yield User_1.default.findOne({ username });
     if (!user) {
         return done(null, false, { message: "User does not exist" });
     }
@@ -46,7 +46,7 @@ const signupFunction = (req, username, password, done) => __awaiter(void 0, void
             $or: [{ username: username }, { email: email }]
         };
         console.log(query);
-        const user = yield user_1.default.findOne(query);
+        const user = yield User_1.default.findOne(query);
         if (user) {
             console.log('User already exists');
             console.log(user);
@@ -59,7 +59,7 @@ const signupFunction = (req, username, password, done) => __awaiter(void 0, void
                 email,
                 displayName: FirstName + " " + LastName
             };
-            const newUser = new user_1.default(userData);
+            const newUser = new User_1.default(userData);
             yield newUser.save();
             return done(null, newUser);
         }
@@ -81,7 +81,7 @@ passport_1.default.serializeUser((user, done) => {
     done(null, user._id);
 });
 passport_1.default.deserializeUser((userId, done) => {
-    user_1.default.findById(userId, function (err, user) {
+    User_1.default.findById(userId, function (err, user) {
         done(err, user);
     });
 });

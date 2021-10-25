@@ -1,6 +1,6 @@
 import passport from "passport";
 import passportLocal, { IVerifyOptions } from 'passport-local';
-import UserModel from '../models/user';
+import UserModel from '../models/User';
 import { Request, Response } from 'express';
 
 const LocalStrategy = passportLocal.Strategy;
