@@ -6,7 +6,7 @@
     "start": "tsc && node server.js"
   },
   "engines": {
-    "node": "^12.18.3",
+    "node": "12.11.1",
     "npm": "^6.0.0"
   },
   "dependencies": {
