@@ -12,25 +12,29 @@ function DisplayListPage(req, res, next) {
             console.error(err);
             res.end(err);
         }
-        res.render('index', { title: 'Contact list', page: 'contact/contact-list', contact: contactCollection, displayName: (0, utils_1.UserDisplayName)(req) });
+        console.log(contactCollection);
+        res.render('contact/contact-list', { title: 'Contact list', page: 'contact/contact-list', contact: contactCollection, displayName: (0, utils_1.UserDisplayName)(req) });
     });
 }
 exports.DisplayListPage = DisplayListPage;
 function DisplayEditPage(req, res, next) {
     let id = req.params.id;
-    contact_1.default.findById(id, {}, {}, (err, contactItemToEdit) => {
-        if (err) {
-            console.error(err);
-            res.end(err);
-        }
-        ;
-        console.log(contactItemToEdit);
-        res.render('index', { title: "Contact Edit", page: "contact/contact-edit", item: contactItemToEdit, displayName: (0, utils_1.UserDisplayName)(req) });
-    });
+    console.log("Id in edit", id);
+    if (id != 'favicon.ico')
+        contact_1.default.findById(id, {}, {}, (err, contactItemToEdit) => {
+            if (err) {
+                console.error(err);
+            }
+            ;
+            if (contactItemToEdit !== undefined) {
+                console.log("Edit Contact", contactItemToEdit);
+                res.render('contact/contact-edit', { title: "Contact Edit", page: "contact/contact-edit", item: contactItemToEdit, displayName: (0, utils_1.UserDisplayName)(req) });
+            }
+        });
 }
 exports.DisplayEditPage = DisplayEditPage;
 function DisplayAddPage(req, res, next) {
-    res.render('index', { title: 'Add Contact', page: 'contact/contact-edit', item: '', displayName: (0, utils_1.UserDisplayName)(req) });
+    res.render('contact/contact-edit', { title: 'Add Contact', page: 'contact/contact-edit', item: '', displayName: (0, utils_1.UserDisplayName)(req) });
 }
 exports.DisplayAddPage = DisplayAddPage;
 function ProcessEditPage(req, res, next) {
@@ -44,7 +48,7 @@ function ProcessEditPage(req, res, next) {
     contact_1.default.updateOne({ _id: id }, updatedItem, {}, (err) => {
         if (err) {
             console.error(err);
-            res.end(err);
+            res.redirect('/contact/list');
         }
         res.redirect('/contact/list');
     });

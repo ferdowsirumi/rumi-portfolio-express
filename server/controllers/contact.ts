@@ -13,8 +13,8 @@ export function DisplayListPage(req: express.Request, res: express.Response, nex
             res.end(err);
         }
 
-        // console.log(contactCollection);
-        res.render('index', { title: 'Contact list', page: 'contact/contact-list', contact: contactCollection, displayName: UserDisplayName(req) })
+         console.log(contactCollection);
+        res.render('contact/contact-list', { title: 'Contact list', page: 'contact/contact-list', contact: contactCollection, displayName: UserDisplayName(req) })
 
     })
 }
@@ -22,22 +22,25 @@ export function DisplayListPage(req: express.Request, res: express.Response, nex
 // Display (E)dit page
 export function DisplayEditPage(req: express.Request, res: express.Response, next: express.NextFunction) {
     let id = req.params.id;
+    console.log("Id in edit", id);
 
-    ContactModel.findById(id, {}, {}, (err, contactItemToEdit) => {
-        if (err) {
-            console.error(err);
-            res.end(err);
-        };
-
-        console.log(contactItemToEdit);
-        res.render('index', { title: "Contact Edit", page: "contact/contact-edit", item: contactItemToEdit, displayName: UserDisplayName(req) })
-    })
+    if(id !='favicon.ico')
+        ContactModel.findById(id, {}, {}, (err, contactItemToEdit) => {
+            if (err) {
+                console.error(err);
+                //res.end(err);
+            };
+            if(contactItemToEdit !== undefined)
+            {console.log("Edit Contact" , contactItemToEdit);
+            res.render('contact/contact-edit', { title: "Contact Edit", page: "contact/contact-edit", item: contactItemToEdit, displayName: UserDisplayName(req) })
+        }
+        })
 }
 
 // Display (C)reate page
 export function DisplayAddPage(req: express.Request, res: express.Response, next: express.NextFunction) {
     // show the edit view
-    res.render('index', { title: 'Add Contact', page: 'contact/contact-edit', item: '', displayName: UserDisplayName(req) });
+    res.render('contact/contact-edit', { title: 'Add Contact', page: 'contact/contact-edit', item: '', displayName: UserDisplayName(req) });
 }
 
 // Process (E)dit page
@@ -54,7 +57,9 @@ export function ProcessEditPage(req: express.Request, res: express.Response, nex
     ContactModel.updateOne({ _id: id }, updatedItem, {}, (err) => {
         if (err) {
             console.error(err);
-            res.end(err);
+            res.redirect('/contact/list');
+
+            // res.end(err);
         }
 
         res.redirect('/contact/list');

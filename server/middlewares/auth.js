@@ -71,7 +71,6 @@ const signupFunction = (req, username, password, done) => __awaiter(void 0, void
 passport_1.default.use('login', new LocalStrategy(strategyOptions, loginFunction));
 passport_1.default.use('signup', new LocalStrategy(strategyOptions, signupFunction));
 const isLoggedIn = (req, res, done) => {
-    console.log("user", req.user);
     if (!req.user) {
         return res.status(401).json({ msg: 'Unauthorized' });
     }

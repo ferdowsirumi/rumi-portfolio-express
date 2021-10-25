@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const ContactSchema = new Schema({
+    //_id:String,
     contactName: String,
     contactNumber: String,
     emailAddress: String

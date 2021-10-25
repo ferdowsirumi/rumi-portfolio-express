@@ -81,7 +81,7 @@ passport.use('login', new LocalStrategy(strategyOptions, loginFunction));
 passport.use('signup', new LocalStrategy(strategyOptions, signupFunction));
 
 export const isLoggedIn = (req: Request, res: Response, done: (error: any, user?: any, options?: IVerifyOptions) => void) => {
-    console.log("user", req.user);
+   // console.log("user", req.user);
     if (!req.user) {
         return res.status(401).json({ msg: 'Unauthorized' })
     }

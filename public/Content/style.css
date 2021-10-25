@@ -822,6 +822,18 @@ body {
     font-family: 'Hind Guntur', sans-serif;
     letter-spacing: 1px;
 }
+.btn-lg {
+    border-color: rgb(38, 144, 201);
+    background: rgb(38, 144, 201);
+    border-radius: 30px;
+    width: 250px;
+    text-align:center;
+    display: inline-block;
+    font-size: 18px;
+    color: #ffffff;
+    font-family: 'Hind Guntur', sans-serif;
+    letter-spacing: 1px;
+}
 
 .zoom {
     transition: transform .5s;
@@ -1518,5 +1530,4 @@ p.service_text {
     color:red;
     margin:auto;
     font-family: 'Verdana';
-
 }

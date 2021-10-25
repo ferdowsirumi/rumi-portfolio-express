@@ -103,9 +103,9 @@ function passwordCheck() {
     passwordError.innerText = "Invalid password!! write with correct format";
   }
 }
-
-submit.addEventListener("click", (e) => {
-  //e.preventDefault();
-  //emailCheck();
-  //passwordCheck();
-});
+if(submit!==undefined)
+  submit.addEventListener("click", (e) => {
+    //e.preventDefault();
+    //emailCheck();
+    //passwordCheck();
+  });
