@@ -4,14 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProcessDeletePage = exports.ProcessAddPage = exports.ProcessEditPage = exports.DisplayAddPage = exports.DisplayEditPage = exports.DisplayListPage = void 0;
-const auth_1 = require("../middlewares/auth");
 const contact_1 = __importDefault(require("../models/contact"));
 const utils_1 = require("../utils");
 function DisplayListPage(req, res, next) {
-    if (!auth_1.isLoggedIn) {
-        res.redirect('/auth/login');
-        res.end();
-    }
     contact_1.default.find(function (err, contactCollection) {
         if (err) {
             console.error(err);

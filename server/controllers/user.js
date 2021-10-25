@@ -25,7 +25,6 @@ function DisplayLoginPage(req, res) {
 }
 exports.DisplayLoginPage = DisplayLoginPage;
 function ProcessLoginPage(req, res, next) {
-    console.log("Mylogin req: ", req);
     return res.redirect('/contact/list');
 }
 exports.ProcessLoginPage = ProcessLoginPage;

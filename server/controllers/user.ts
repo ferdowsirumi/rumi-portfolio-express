@@ -12,7 +12,6 @@ export async function DisplayLoginPage(req: Request, res: Response) {
 }
 
 export function ProcessLoginPage(req: Request, res: Response, next: NextFunction) {
-    console.log("Mylogin req: ", req);
     return res.redirect('/contact/list')
 }
 
