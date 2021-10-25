@@ -37,7 +37,7 @@
             <a href="/projects">PROJECTS</a>
             <a href="/about">ABOUT</a>
             <a href="/contact">CONTACT</a>
-            <% if(typeof displayName !== undefined || displayName !== null) { %>
+              <% if(displayName) { %>
                  <a  href="/contact/list">BUSINESS CONTACT LIST</a>
                  <a href="/auth/logout"><i class="fas fa-sign-out-alt fa-lg"></i> LOGOUT</a>
                <% } else { %>

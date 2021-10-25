@@ -48,6 +48,7 @@ const StoreOptions = {
 const index_1 = __importDefault(require("../routes/index"));
 const users_1 = __importDefault(require("../routes/users"));
 const contact_1 = __importDefault(require("../routes/contact"));
+const utils_1 = require("../utils");
 console.log("remoete uri", DBConfig.RemoteURI);
 mongoose_1.default.connect((DBConfig.RemoteURI) ? DBConfig.RemoteURI : DBConfig.LocalURI);
 const db = mongoose_1.default.connection;
@@ -79,7 +80,7 @@ app.use(function (err, req, res, next) {
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
     res.status(err.status || 500);
-    res.render('error', { title: 'Error' });
+    res.render('error', { title: 'Error', displayName: (0, utils_1.UserDisplayName)(req) });
 });
 exports.default = app;
 //# sourceMappingURL=app.js.map
