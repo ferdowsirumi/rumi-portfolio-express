@@ -26,7 +26,8 @@
     "passport": "^0.5.0",
     "passport-local": "^1.0.0",
     "popper.js": "^1.16.1",
-    "ts-node": "^10.2.1"
+    "ts-node": "^10.2.1",
+    "mongoose": "^6.0.8"
   },
   "description": "Profile of Ferdowsi Rumi using node.js",
   "main": "index.js",
