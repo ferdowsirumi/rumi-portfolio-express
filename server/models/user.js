@@ -40,4 +40,4 @@ UserSchema.methods.isValidPassword = function (password) {
 };
 const Model = mongoose_1.default.model('User', UserSchema);
 exports.default = Model;
-//# sourceMappingURL=User.js.map
+//# sourceMappingURL=user.js.map

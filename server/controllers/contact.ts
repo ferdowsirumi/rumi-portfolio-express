@@ -2,7 +2,7 @@ import express from 'express';
 import { HttpError } from 'http-errors';
 import { isLoggedIn } from '../middlewares/auth';
 
-import ContactModel from '../models/Contact';
+import ContactModel from '../models/contact';
 import { UserDisplayName } from '../utils';
 
 //(R)ead in CRUD

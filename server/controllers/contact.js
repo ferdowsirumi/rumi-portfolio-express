@@ -4,10 +4,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProcessDeletePage = exports.ProcessAddPage = exports.ProcessEditPage = exports.DisplayAddPage = exports.DisplayEditPage = exports.DisplayListPage = void 0;
-const Contact_1 = __importDefault(require("../models/Contact"));
+const contact_1 = __importDefault(require("../models/contact"));
 const utils_1 = require("../utils");
 function DisplayListPage(req, res, next) {
-    Contact_1.default.find(function (err, contactCollection) {
+    contact_1.default.find(function (err, contactCollection) {
         if (err) {
             console.error(err);
             res.end(err);
@@ -20,7 +20,7 @@ exports.DisplayListPage = DisplayListPage;
 function DisplayEditPage(req, res, next) {
     let id = req.params.id;
     if (id != 'favicon.ico')
-        Contact_1.default.findById(id, {}, {}, (err, contactItemToEdit) => {
+        contact_1.default.findById(id, {}, {}, (err, contactItemToEdit) => {
             if (err) {
                 console.error(err);
                 res.end(err);
@@ -39,13 +39,13 @@ function DisplayAddPage(req, res, next) {
 exports.DisplayAddPage = DisplayAddPage;
 function ProcessEditPage(req, res, next) {
     let id = req.params.id;
-    let updatedItem = new Contact_1.default({
+    let updatedItem = new contact_1.default({
         "_id": id,
         "contactName": req.body.contactName,
         "contactNumber": req.body.contactNumber,
         "emailAddress": req.body.emailAddress
     });
-    Contact_1.default.updateOne({ _id: id }, updatedItem, {}, (err) => {
+    contact_1.default.updateOne({ _id: id }, updatedItem, {}, (err) => {
         if (err) {
             console.error(err);
             res.redirect('/contact/list');
@@ -56,12 +56,12 @@ function ProcessEditPage(req, res, next) {
 }
 exports.ProcessEditPage = ProcessEditPage;
 function ProcessAddPage(req, res, next) {
-    let newItem = new Contact_1.default({
+    let newItem = new contact_1.default({
         "contactName": req.body.contactName,
         "contactNumber": req.body.contactNumber,
         "emailAddress": req.body.emailAddress
     });
-    Contact_1.default.create(newItem, (err) => {
+    contact_1.default.create(newItem, (err) => {
         if (err) {
             console.error(err);
             res.end(err);
@@ -73,7 +73,7 @@ function ProcessAddPage(req, res, next) {
 exports.ProcessAddPage = ProcessAddPage;
 function ProcessDeletePage(req, res, next) {
     let id = req.params.id;
-    Contact_1.default.remove({ _id: id }, (err) => {
+    contact_1.default.remove({ _id: id }, (err) => {
         if (err) {
             console.error(err);
             res.end(err);
