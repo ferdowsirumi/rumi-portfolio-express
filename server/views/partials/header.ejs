@@ -37,13 +37,13 @@
             <a href="/projects">PROJECTS</a>
             <a href="/about">ABOUT</a>
             <a href="/contact">CONTACT</a>
-            <!-- <a href="/auth/login">LOGIN</a> -->
-            <% if(displayName) { %>
+            <% if(typeof displayName !== undefined || displayName !== null) { %>
                  <a  href="/contact/list">BUSINESS CONTACT LIST</a>
                  <a href="/auth/logout"><i class="fas fa-sign-out-alt fa-lg"></i> LOGOUT</a>
                <% } else { %>
                  <a  href="/auth/login"><i class="fas fa-sign-in-alt fa-lg"></i> LOGIN</a>
                <% } %>
+
             <a href="#" class="icon" onclick="myfunction()">
                 <i class="fa fa-bars"></i>
             </a>

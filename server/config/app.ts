@@ -37,6 +37,7 @@ const StoreOptions = {
 import indexRouter from '../routes/index';
 import userRouter from '../routes/users';
 import contactRouter from '../routes/contact';
+import { UserDisplayName } from "../utils";
 
 //db config connection
 
@@ -92,7 +93,7 @@ app.use(function(err:HttpError, req: express.Request, res:express.Response, next
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error', { title: 'Error'});
+  res.render('error', { title: 'Error', displayName:UserDisplayName(req)});
 });
 
 export default  app;
