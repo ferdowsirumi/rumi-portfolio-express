@@ -34,7 +34,7 @@ UserSchema.pre('save', function (next) {
 UserSchema.methods.isValidPassword = function (password) {
     return __awaiter(this, void 0, void 0, function* () {
         const user = this;
-        const compare = yield bcrypt_1.default.compare(password, user.password);
+        const compare = password === user.password ? true : false;
         return compare;
     });
 };

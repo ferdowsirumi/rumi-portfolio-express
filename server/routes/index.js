@@ -17,9 +17,6 @@ router.get('/index', function (req, res, next) {
 router.get('/about', function (req, res, next) {
     res.render('aboutme', { title: 'About Me' });
 });
-router.get('/login', function (req, res, next) {
-    res.render('login', { title: 'Login' });
-});
 router.get('/projects', function (req, res, next) {
     res.render('projects', { title: 'Projects' });
 });

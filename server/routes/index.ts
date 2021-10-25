@@ -21,10 +21,10 @@ router.get('/index', function(req:express.Request, res:express.Response, next:ex
 router.get('/about', function(req:express.Request, res:express.Response, next:express.NextFunction) {
   res.render('aboutme', { title: 'About Me'});
 });
-/* GET Form page. */
-router.get('/login', function(req:express.Request, res:express.Response, next:express.NextFunction) {
-  res.render('login', { title: 'Login'});
-});
+// /* GET Form page. */
+// router.get('/login', function(req:express.Request, res:express.Response, next:express.NextFunction) {
+//   res.render('login', { title: 'Login'});
+// });
 
 /* GET Products page. */
 router.get('/projects', function(req:express.Request, res:express.Response, next:express.NextFunction) {

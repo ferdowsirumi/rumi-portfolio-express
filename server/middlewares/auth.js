@@ -23,6 +23,7 @@ const strategyOptions = {
     passReqToCallback: true
 };
 const loginFunction = (req, username, password, done) => __awaiter(void 0, void 0, void 0, function* () {
+    debugger;
     const user = yield user_1.default.findOne({ username });
     if (!user) {
         return done(null, false, { message: "User does not exist" });
@@ -70,6 +71,7 @@ const signupFunction = (req, username, password, done) => __awaiter(void 0, void
 passport_1.default.use('login', new LocalStrategy(strategyOptions, loginFunction));
 passport_1.default.use('signup', new LocalStrategy(strategyOptions, signupFunction));
 const isLoggedIn = (req, res, done) => {
+    console.log("user", req.user);
     if (!req.user) {
         return res.status(401).json({ msg: 'Unauthorized' });
     }

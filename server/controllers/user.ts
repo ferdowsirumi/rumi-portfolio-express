@@ -5,13 +5,14 @@ import { UserDisplayName } from "../utils";
 
 export async function DisplayLoginPage(req: Request, res: Response) {
     if (!req.user) {
-        return res.render('index', { title: 'Login', page: 'auth/login', messages: req.flash('loginMessage'), displayName: UserDisplayName(req) })
+        return res.render('login', { title: 'Login', page: 'login', messages: req.flash('loginMessage'), displayName: UserDisplayName(req) })
     }
 
     return res.redirect('/contact/list');
 }
 
 export function ProcessLoginPage(req: Request, res: Response, next: NextFunction) {
+    console.log("Mylogin req: ", req);
     return res.redirect('/contact/list')
 }
 

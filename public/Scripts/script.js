@@ -13,10 +13,6 @@ function myfunction() {
   }
 }
 
-
-
-
-
 window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
@@ -83,8 +79,9 @@ const validateEmail = (email) => {
 }
 
 const validatePassword = (password) => {
-  var strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
-  return strongRegex.test(String(password));
+  //var strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+  //return strongRegex.test(String(password));
+  return true;
 
 }
 function emailCheck() {
@@ -108,7 +105,7 @@ function passwordCheck() {
 }
 
 submit.addEventListener("click", (e) => {
-  e.preventDefault();
-  emailCheck();
-  passwordCheck();
+  //e.preventDefault();
+  //emailCheck();
+  //passwordCheck();
 });

@@ -18,13 +18,14 @@ const utils_1 = require("../utils");
 function DisplayLoginPage(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         if (!req.user) {
-            return res.render('index', { title: 'Login', page: 'auth/login', messages: req.flash('loginMessage'), displayName: (0, utils_1.UserDisplayName)(req) });
+            return res.render('login', { title: 'Login', page: 'login', messages: req.flash('loginMessage'), displayName: (0, utils_1.UserDisplayName)(req) });
         }
         return res.redirect('/contact/list');
     });
 }
 exports.DisplayLoginPage = DisplayLoginPage;
 function ProcessLoginPage(req, res, next) {
+    console.log("Mylogin req: ", req);
     return res.redirect('/contact/list');
 }
 exports.ProcessLoginPage = ProcessLoginPage;
