@@ -103,7 +103,7 @@ function passwordCheck() {
     passwordError.innerText = "Invalid password!! write with correct format";
   }
 }
-if(submit!==undefined)
+if(submit)
   submit.addEventListener("click", (e) => {
     //e.preventDefault();
     //emailCheck();

@@ -12,7 +12,7 @@ function DisplayListPage(req, res, next) {
             console.error(err);
             res.end(err);
         }
-        console.log(contactCollection);
+        contactCollection.sort((a, b) => a.contactName.toLowerCase().localeCompare(b.contactName.toLowerCase()));
         res.render('contact/contact-list', { title: 'Contact list', page: 'contact/contact-list', contact: contactCollection, displayName: (0, utils_1.UserDisplayName)(req) });
     });
 }

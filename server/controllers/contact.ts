@@ -7,15 +7,12 @@ import { UserDisplayName } from '../utils';
 //(R)ead in CRUD
 export function DisplayListPage(req: express.Request, res: express.Response, next: express.NextFunction) {
     ContactModel.find(function (err, contactCollection) {
-
         if (err) {
             console.error(err);
             res.end(err);
         }
-
-         console.log(contactCollection);
+        contactCollection.sort((a, b) => a.contactName.toLowerCase().localeCompare(b.contactName.toLowerCase()))
         res.render('contact/contact-list', { title: 'Contact list', page: 'contact/contact-list', contact: contactCollection, displayName: UserDisplayName(req) })
-
     })
 }
 
@@ -24,16 +21,16 @@ export function DisplayEditPage(req: express.Request, res: express.Response, nex
     let id = req.params.id;
     console.log("Id in edit", id);
 
-    if(id !='favicon.ico')
+    if (id != 'favicon.ico')
         ContactModel.findById(id, {}, {}, (err, contactItemToEdit) => {
             if (err) {
                 console.error(err);
                 //res.end(err);
             };
-            if(contactItemToEdit !== undefined)
-            {console.log("Edit Contact" , contactItemToEdit);
-            res.render('contact/contact-edit', { title: "Contact Edit", page: "contact/contact-edit", item: contactItemToEdit, displayName: UserDisplayName(req) })
-        }
+            if (contactItemToEdit !== undefined) {
+                console.log("Edit Contact", contactItemToEdit);
+                res.render('contact/contact-edit', { title: "Contact Edit", page: "contact/contact-edit", item: contactItemToEdit, displayName: UserDisplayName(req) })
+            }
         })
 }
 
@@ -75,14 +72,14 @@ export function ProcessAddPage(req: express.Request, res: express.Response, next
         "emailAddress": req.body.emailAddress
     });
 
-    ContactModel.create(newItem, (err:HttpError) => {
-            if (err) {
-                console.error(err);
-                res.end(err);
-            };
+    ContactModel.create(newItem, (err: HttpError) => {
+        if (err) {
+            console.error(err);
+            res.end(err);
+        };
 
-            res.redirect('/contact/list');
-        })
+        res.redirect('/contact/list');
+    })
 }
 
 // Process (D)elete page
