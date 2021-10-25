@@ -1,9 +1,11 @@
 import express from 'express';
 import { DisplayListPage, DisplayAddPage, DisplayEditPage, ProcessAddPage, ProcessEditPage, ProcessDeletePage } from '../controllers/contact';
+import { isLoggedIn } from '../middlewares/auth';
 
 const router = express.Router();
 
 /* GET /contact-list page. */
+
 router.get('/list', DisplayListPage);
 
 /* GET - display /contact-list/add page. */

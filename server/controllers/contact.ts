@@ -1,11 +1,13 @@
 import express from 'express';
 import { HttpError } from 'http-errors';
+import { isLoggedIn } from '../middlewares/auth';
 
 import ContactModel from '../models/contact';
 import { UserDisplayName } from '../utils';
 
 //(R)ead in CRUD
 export function DisplayListPage(req: express.Request, res: express.Response, next: express.NextFunction) {
+    
     ContactModel.find(function (err, contactCollection) {
         if (err) {
             console.error(err);
@@ -19,13 +21,11 @@ export function DisplayListPage(req: express.Request, res: express.Response, nex
 // Display (E)dit page
 export function DisplayEditPage(req: express.Request, res: express.Response, next: express.NextFunction) {
     let id = req.params.id;
-    console.log("Id in edit", id);
-
     if (id != 'favicon.ico')
         ContactModel.findById(id, {}, {}, (err, contactItemToEdit) => {
             if (err) {
                 console.error(err);
-                //res.end(err);
+                res.end(err);
             };
             if (contactItemToEdit !== undefined) {
                 console.log("Edit Contact", contactItemToEdit);
@@ -55,8 +55,7 @@ export function ProcessEditPage(req: express.Request, res: express.Response, nex
         if (err) {
             console.error(err);
             res.redirect('/contact/list');
-
-            // res.end(err);
+         res.end(err);
         }
 
         res.redirect('/contact/list');

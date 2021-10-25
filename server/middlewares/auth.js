@@ -72,7 +72,7 @@ passport_1.default.use('login', new LocalStrategy(strategyOptions, loginFunction
 passport_1.default.use('signup', new LocalStrategy(strategyOptions, signupFunction));
 const isLoggedIn = (req, res, done) => {
     if (!req.user) {
-        return res.status(401).json({ msg: 'Unauthorized' });
+        res.redirect('/auth/login');
     }
     done(null, req.user);
 };

@@ -4,9 +4,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProcessDeletePage = exports.ProcessAddPage = exports.ProcessEditPage = exports.DisplayAddPage = exports.DisplayEditPage = exports.DisplayListPage = void 0;
+const auth_1 = require("../middlewares/auth");
 const contact_1 = __importDefault(require("../models/contact"));
 const utils_1 = require("../utils");
 function DisplayListPage(req, res, next) {
+    if (!auth_1.isLoggedIn) {
+        res.redirect('/auth/login');
+        res.end();
+    }
     contact_1.default.find(function (err, contactCollection) {
         if (err) {
             console.error(err);
@@ -19,11 +24,11 @@ function DisplayListPage(req, res, next) {
 exports.DisplayListPage = DisplayListPage;
 function DisplayEditPage(req, res, next) {
     let id = req.params.id;
-    console.log("Id in edit", id);
     if (id != 'favicon.ico')
         contact_1.default.findById(id, {}, {}, (err, contactItemToEdit) => {
             if (err) {
                 console.error(err);
+                res.end(err);
             }
             ;
             if (contactItemToEdit !== undefined) {
@@ -49,6 +54,7 @@ function ProcessEditPage(req, res, next) {
         if (err) {
             console.error(err);
             res.redirect('/contact/list');
+            res.end(err);
         }
         res.redirect('/contact/list');
     });
